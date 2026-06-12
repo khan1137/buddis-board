@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- A2 bd ペア: buddisの子音 b と d は鏡像の双子。ボウル同士が向き合い接する = 向き合うふたり -->
+  <g transform="translate(0,3)" fill="#B3492E">
+    <rect x="21" y="18" width="10" height="58" rx="5"/>
+    <path fill-rule="evenodd" d="M 37 50 A 13 13 0 1 0 37 76 A 13 13 0 1 0 37 50 Z M 37 57 A 6 6 0 1 1 37 69 A 6 6 0 1 1 37 57 Z"/>
+    <rect x="69" y="18" width="10" height="58" rx="5"/>
+    <path fill-rule="evenodd" d="M 63 50 A 13 13 0 1 0 63 76 A 13 13 0 1 0 63 50 Z M 63 57 A 6 6 0 1 1 63 69 A 6 6 0 1 1 63 57 Z"/>
+  </g>
+</svg>

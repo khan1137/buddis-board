@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BUDDIS ロゴデザイン提案 — Direction Board v1 | 1137</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=M+PLUS+Rounded+1c:wght@500;700&family=Kiwi+Maru:wght@400;500&family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#33241D; --brick:#B3492E; --persimmon:#E58A64; --coral:#E8704F;
+    --cream:#FFF6EC; --sumi:#2B2723; --kinari:#F6EFE3; --green:#1F5638;
+    --bg:#F4EFE9; --card:#FBF7F2; --dark:#221A16; --line:#E5DACD; --sub:#8A7464; --body:#5C4A3D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);font-family:'Zen Kaku Gothic New',sans-serif;color:var(--ink);line-height:1.8}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ---- hero ---- */
+  .hero{background:var(--dark);color:#F5EDE4;padding:72px 0 56px}
+  .hero .kicker{font-size:12px;letter-spacing:.22em;color:#C49A6C;font-weight:700}
+  .hero h1{font-size:34px;font-weight:700;letter-spacing:.03em;margin:14px 0 10px}
+  .hero p{font-size:14px;color:#C9B8AC;max-width:720px}
+  .hero .meta{margin-top:26px;display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#9D8A7B}
+  .hero .meta b{color:#E5D5C5;font-weight:500}
+  .toc{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap}
+  .toc a{font-size:12px;color:#EBD9C8;background:#3A2C24;border:1px solid #54402F;padding:7px 14px;border-radius:99px;text-decoration:none}
+  .toc a:hover{background:#4A382C}
+
+  /* ---- sections ---- */
+  section{padding:64px 0 8px}
+  .sec-label{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--brick)}
+  h2{font-size:24px;font-weight:700;margin:8px 0 14px}
+  .lede{font-size:14.5px;color:var(--body);max-width:780px;margin-bottom:28px}
+  .lede b, .lede strong{color:var(--ink)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  /* research */
+  .step-row{display:flex;gap:0;align-items:stretch;flex-wrap:wrap}
+  .step{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);padding:18px 18px 16px;position:relative}
+  .step:first-child{border-radius:14px 0 0 14px}
+  .step:last-child{border-radius:0 14px 14px 0}
+  .step .n{font-size:11px;font-weight:700;color:var(--brick);letter-spacing:.12em}
+  .step h4{font-size:14px;margin:6px 0 4px}
+  .step p{font-size:12px;color:var(--sub);line-height:1.7}
+  .scope-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .scope-list span{font-size:11.5px;background:#fff;border:1px solid var(--line);color:var(--body);padding:5px 11px;border-radius:99px}
+
+  /* codes / ws */
+  .code-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .code-card .no{font-size:11px;font-weight:700;color:#A08B79;letter-spacing:.1em}
+  .code-card h4{font-size:14px;margin:4px 0 4px}
+  .code-card p{font-size:12px;color:var(--sub);line-height:1.7}
+  .ws-card{border-left:4px solid var(--brick);background:var(--card);border-radius:0 14px 14px 0;padding:20px 22px}
+  .ws-card h4{font-size:15px;margin-bottom:6px}
+  .ws-card p{font-size:13px;color:var(--body)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#EFE6DA;font-size:12px;letter-spacing:.04em}
+  .ok{color:#1F6E47;font-weight:700}
+  .ng{color:#B3372E;font-weight:700}
+  .warn-box{background:#FBEFE7;border:1px solid #E8C4AC;border-radius:12px;padding:16px 20px;font-size:13px;margin-top:16px}
+  .warn-box b{color:var(--brick)}
+
+  /* direction cards (from iteration-1) */
+  .dir-head{display:flex;align-items:baseline;gap:14px;margin:34px 0 6px}
+  .dir-head .tag{font-size:12px;font-weight:700;color:#fff;padding:3px 10px;border-radius:6px}
+  .dir-head h3{font-size:19px;font-weight:700}
+  .dir-head .axis{font-size:12px;color:var(--sub)}
+  .dir-desc{font-size:13.5px;color:var(--body);margin-bottom:18px;max-width:880px}
+  .lcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px}
+  .lcard h4{font-size:13px;font-weight:700}
+  .lcard .note{font-size:12px;color:var(--sub);line-height:1.75}
+  .stage{display:flex;align-items:center;justify-content:center;height:124px;border-radius:10px;background:#fff;color:var(--ink)}
+  .stage.dark{background:var(--dark);color:#F5EDE4}
+  .scale-row{display:flex;align-items:flex-end;gap:18px;justify-content:center;border-radius:10px;background:#fff;padding:10px 10px 6px}
+  .scale-row .s{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;color:#9A8574}
+
+  .family{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:8px}
+  .family-row{display:flex;gap:36px;align-items:center;flex-wrap:wrap;margin-top:14px}
+
+  /* feedback */
+  .q-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:14px}
+  .q-card .qn{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--brick);border-radius:6px;padding:2px 9px;letter-spacing:.08em}
+  .q-card h4{font-size:15px;margin:10px 0 6px}
+  .q-card p{font-size:13px;color:var(--body)}
+  .q-card .opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .q-card .opts span{font-size:12px;border:1.5px solid var(--line);border-radius:99px;padding:5px 14px;color:var(--ink)}
+
+  footer{margin-top:72px;background:var(--dark);color:#9D8A7B;padding:36px 0;font-size:11.5px;line-height:2}
+  footer b{color:#E5D5C5;font-weight:500}
+  .small{font-size:11.5px;color:var(--sub)}
+  svg text{user-select:none}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="hero"><div class="wrap">
+  <div class="kicker">LOGO DIRECTION BOARD — v1</div>
+  <h1>BUDDIS（バディス）ロゴデザイン提案</h1>
+  <p>『中小企業のAI業務基盤 / 企業の成長を支援するビジネスバディ』のロゴ開発にあたり、競合SaaS・AIブランドのリサーチから方向性3案・計8案を設計しました。リサーチの根拠 → 設計意図 → 案 → フィードバックのお願い、の順でご覧いただけます。</p>
+  <div class="meta">
+    <span>作成: <b>株式会社1137</b></span>
+    <span>日付: <b>2026年6月</b></span>
+    <span>ステータス: <b>方向性のご確認待ち（iteration 1）</b></span>
+  </div>
+  <div class="toc">
+    <a href="#research">① リサーチ</a>
+    <a href="#positioning">② ポジショニング</a>
+    <a href="#naming">③ ネーミング検証</a>
+    <a href="#intent">④ 設計意図</a>
+    <a href="#proposals">⑤ ロゴ案（3方向×8案）</a>
+    <a href="#family">⑥ ファミリー展開</a>
+    <a href="#feedback">⑦ フィードバックのお願い</a>
+  </div>
+</div></div>
+
+<!-- ================= 1. RESEARCH ================= -->
+<section id="research"><div class="wrap">
+  <div class="sec-label">RESEARCH PROCESS</div>
+  <h2>① どう調べたか</h2>
+  <p class="lede">「なんとなく良いロゴ」ではなく、<b>市場のどこが混んでいて、どこが空いているか</b>を先に確定してから設計しています。調査は6領域・対象約30ブランドを並列で実施し、すべての記述を別エージェントが事実検証（古いロゴ情報・誤認の排除）した上で統合しました。</p>
+
+  <div class="step-row">
+    <div class="step"><div class="n">STEP 1</div><h4>競合ロゴの実態調査</h4><p>会計・経費 / 人事・勤怠 / グループウェア・名刺の3領域で、各社の色（公式SVG実測のhex値）・モチーフ・書体を収集</p></div>
+    <div class="step"><div class="n">STEP 2</div><h4>体系・トレンド調査</h4><p>マルチプロダクトのロゴ体系8社（Google / Microsoft / Zoho / freee / 楽楽ほか）と、2025-26年AIブランドのロゴトレンド</p></div>
+    <div class="step"><div class="n">STEP 3</div><h4>ネーミング・商標調査</h4><p>「バディス / マイバディ / バディックス」3候補の商標（J-PlatPat称呼検索）・商号・ドメインの衝突チェック</p></div>
+    <div class="step"><div class="n">STEP 4</div><h4>事実検証 → 統合</h4><p>調査結果を検証担当が抜き打ち再調査（誤り3件を修正）。検証済みの事実だけでポジショニングを確定</p></div>
+  </div>
+
+  <div class="scope-list">
+    <span>freee</span><span>マネーフォワード クラウド</span><span>弥生</span><span>バクラク</span><span>楽楽精算（楽楽クラウド）</span><span>ジョブカン</span><span>SmartHR</span><span>KING OF TIME</span><span>jinjer</span><span>kintone</span><span>Chatwork / kubell</span><span>LINE / LINE WORKS</span><span>Sansan / Eight</span><span>Notion</span><span>OpenAI</span><span>Microsoft Copilot</span><span>Anthropic Claude</span><span>Perplexity</span><span>exaBase</span><span>ELYZA</span><span>ほか</span>
+  </div>
+</div></section>
+
+<!-- ================= 2. POSITIONING ================= -->
+<section id="positioning"><div class="wrap">
+  <div class="sec-label">POSITIONING MAP</div>
+  <h2>② 市場の地図 — 青の「制服」と、空いている席</h2>
+  <p class="lede">業務SaaSのロゴは<b>濃い青 × ゴシック体 × 成長モチーフ</b>に極端に密集しています（下図左下）。特に #0054AC〜#0E63C4 の濃青帯には4社がほぼ同色で並び、新規参入がここに置かれると「誰でもない会社」になります。一方、<b>暖色 × 人格があり、かつ複数プロダクトを束ねる「格」を持つブランドは不在</b> — ここが BUDDIS の席です。</p>
+
+  <div class="card" style="padding:18px">
+  <svg viewBox="0 0 960 560" style="width:100%;height:auto" font-family="'Zen Kaku Gothic New',sans-serif">
+    <!-- quadrant tints -->
+    <rect x="80" y="40" width="420" height="230" fill="#EDF1F6"/>
+    <rect x="500" y="40" width="420" height="230" fill="#FBF1E8"/>
+    <rect x="80" y="270" width="420" height="230" fill="#E7ECF3"/>
+    <rect x="500" y="270" width="420" height="230" fill="#F6EDE4"/>
+    <!-- axes -->
+    <line x1="80" y1="270" x2="920" y2="270" stroke="#C9B8A8" stroke-width="1.5"/>
+    <line x1="500" y1="40" x2="500" y2="500" stroke="#C9B8A8" stroke-width="1.5"/>
+    <text x="84" y="285" font-size="12" fill="#8A7464">← 寒色（信頼・業務）</text>
+    <text x="916" y="285" font-size="12" fill="#8A7464" text-anchor="end">暖色（親しみ・熱量）→</text>
+    <text x="500" y="30" font-size="12" fill="#8A7464" text-anchor="middle">人格・キャラクター ↑</text>
+    <text x="500" y="522" font-size="12" fill="#8A7464" text-anchor="middle">↓ 道具・機能</text>
+
+    <!-- Q3 寒色×道具 cluster -->
+    <g font-size="11" fill="#4A3E33">
+      <circle cx="200" cy="420" r="8" fill="#005BAC"/><text x="213" y="424">弥生</text>
+      <circle cx="160" cy="450" r="8" fill="#0054AC"/><text x="173" y="454">MFクラウド</text>
+      <circle cx="265" cy="440" r="8" fill="#0E63C4"/><text x="278" y="444">バクラク</text>
+      <circle cx="195" cy="383" r="8" fill="#007BC7"/><text x="208" y="387">楽楽精算</text>
+      <circle cx="290" cy="402" r="8" fill="#007CFF"/><text x="303" y="406">ジョブカン</text>
+      <circle cx="148" cy="392" r="8" fill="#004B8F"/><text x="161" y="396">Sansan</text>
+      <circle cx="240" cy="362" r="8" fill="#05578E"/><text x="253" y="366">HRMOS</text>
+      <circle cx="130" cy="470" r="8" fill="#1B2A4A"/><text x="143" y="474">exaBase / ELYZA</text>
+      <!-- 制服 annotation -->
+      <rect x="118" y="330" width="200" height="0" fill="none"/>
+      <text x="125" y="345" font-size="11.5" fill="#B3492E" font-weight="700">濃青帯に密集 ＝「業務SaaSの制服」</text>
+    </g>
+
+    <!-- Q2 寒色×人格 -->
+    <g font-size="11" fill="#4A3E33">
+      <circle cx="280" cy="180" r="8" fill="#2864F0"/><text x="293" y="184">freee（ツバメ）</text>
+      <circle cx="215" cy="140" r="8" fill="#00C4CC"/><text x="228" y="144">SmartHR</text>
+      <circle cx="170" cy="215" r="8" fill="#06C755"/><text x="183" y="219">LINE WORKS</text>
+    </g>
+
+    <!-- Q4 暖色×道具 -->
+    <g font-size="11" fill="#4A3E33">
+      <circle cx="640" cy="420" r="8" fill="#E2750F"/><text x="653" y="424">MFコーポレート</text>
+      <circle cx="700" cy="455" r="8" fill="#EF8200"/><text x="713" y="459">ラクス</text>
+      <circle cx="600" cy="380" r="8" fill="#D61518"/><text x="613" y="384">タッチオンタイム</text>
+      <text x="600" y="492" font-size="11" fill="#8A7464">※ 暖色は「コーポレート層」のみ。プロダクトの主役色には不在</text>
+    </g>
+
+    <!-- Q1 暖色×人格 -->
+    <g font-size="11" fill="#4A3E33">
+      <circle cx="635" cy="225" r="8" fill="#FFBF00"/><text x="648" y="229">kintone</text>
+      <circle cx="710" cy="195" r="8" fill="#F03748"/><text x="723" y="199">Chatwork</text>
+      <circle cx="590" cy="165" r="8" fill="#06C755"/><text x="603" y="169">LINE</text>
+      <circle cx="565" cy="235" r="8" fill="#F18800"/><text x="578" y="239">KING OF TIME</text>
+      <text x="560" y="258" font-size="11" fill="#8A7464">単機能ツール・コミュニケーション系のみ</text>
+    </g>
+
+    <!-- BUDDIS target -->
+    <g>
+      <circle cx="790" cy="105" r="34" fill="none" stroke="#B3492E" stroke-width="2" stroke-dasharray="5 5"/>
+      <circle cx="790" cy="105" r="11" fill="#B3492E"/>
+      <text x="790" y="62" font-size="13" fill="#B3492E" font-weight="700" text-anchor="middle">BUDDIS の席（空席）</text>
+      <text x="790" y="152" font-size="11" fill="#8A7464" text-anchor="middle">暖色 × 人格 × 8+プロダクトを</text>
+      <text x="790" y="167" font-size="11" fill="#8A7464" text-anchor="middle">束ねるプラットフォームの規律</text>
+    </g>
+  </svg>
+  </div>
+
+  <h2 style="margin-top:44px;font-size:18px">市場の支配的コード（＝今回あえて着ない「制服」）</h2>
+  <div class="grid3" style="margin-top:14px">
+    <div class="code-card"><div class="no">CODE 1</div><h4>信頼ブルー単色</h4><p>会計系6/7社・HR系3/6社が青。識別力がほぼ失われています</p></div>
+    <div class="code-card"><div class="no">CODE 2</div><h4>ジオメトリックなゴシック体一強</h4><p>丸ゴ小文字（freee / sansan / kintone…）も「親しみSaaSの記号」として飽和</p></div>
+    <div class="code-card"><div class="no">CODE 3</div><h4>「成長・上昇」の抽象モチーフ</h4><p>ツバメ・矢印・三角形・新芽・吹き出し。どの会社の説明にもなる形</p></div>
+    <div class="code-card"><div class="no">CODE 4</div><h4>色相コーディングのファミリー</h4><p>製品ごとの色分けが乱立し、各社のパレットが衝突中</p></div>
+    <div class="code-card"><div class="no">CODE 5</div><h4>AI記号 ✦スパーク・虹色グラデ</h4><p>Copilot/Geminiが占有済みで陳腐化。2026年は世界的に撤退傾向（UX研究でも「機能が伝わらない」と実証）</p></div>
+    <div class="code-card" style="background:var(--kinari)"><div class="no" style="color:var(--brick)">CONCLUSION</div><h4>スパークを描くな、信頼の根拠を描け</h4><p>2026年のAIブランディングの結論。BUDDISは「AIっぽさ」ではなく「相棒であること」を形にします</p></div>
+  </div>
+
+  <h2 style="margin-top:44px;font-size:18px">BUDDIS が取るべき3つの空席（ホワイトスペース）</h2>
+  <div class="grid3" style="margin-top:14px">
+    <div class="ws-card"><h4>WS-1 暖色プライマリ</h4><p>国内AI SaaSはネイビー一色で、暖色のAIブランドはほぼ完全な空白。「青い業務システム＝難しそう」の既視感を色で外し、「怖くないAI」を先に伝えます。既存の暖色（MF・ラクス・kubell等）と被らない<b>レンガ〜杏</b>の色相を選定済みです。</p></div>
+    <div class="ws-card"><h4>WS-2 「2つ寄り添う」ペア構造</h4><p>調査した8社のプロダクト体系の中に、<b>「2つの形が対になる」ことを文法にしたロゴは存在しません</b>。「経費のバディ」「帳票のバディ」というプロダクト思想と、ロゴの構造が一対一で一致します。</p></div>
+    <div class="ws-card"><h4>WS-3 手の痕跡 × 和文可読性</h4><p>市場のロゴタイプは欧文ゴシックばかりで、人間味のある文字・カタカナ主役のロックアップは空白。ITに不慣れな方が<b>読める・呼べる・覚えられる</b>ことに直結します。</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 3. NAMING ================= -->
+<section id="naming"><div class="wrap">
+  <div class="sec-label">NAMING VERIFICATION</div>
+  <h2>③ ネーミング検証 — 「バディス」が唯一通れる道です</h2>
+  <p class="lede">ご検討中だった3候補を、商標（J-PlatPat称呼検索）・商号・ドメイン・呼びやすさの観点で調査しました。結論として<b>「バディス」だけが商標登録の余地を残しています</b>。</p>
+
+  <table>
+    <tr><th style="width:120px">候補</th><th>商標の状況</th><th style="width:90px">判定</th></tr>
+    <tr>
+      <td><b>バディス<br>BUDDIS</b></td>
+      <td>称呼「バディス」完全一致の登録ゼロ。ソフトウェア（9類）・SaaS（42類)に登録余地あり。※「バディスマ」（東京海上日動・42類）等との類否は出願前に弁理士確認を推奨</td>
+      <td class="ok">◎ 推奨</td>
+    </tr>
+    <tr>
+      <td>マイバディ<br>MyBuddy</td>
+      <td>SCSK株式会社が「MYBUDDY」を9類・42類で登録済み（登録6350310）。35/41類も他社登録あり。SaaSでの取得はほぼ不可能</td>
+      <td class="ng">✕ 不可</td>
+    </tr>
+    <tr>
+      <td>バディックス<br>BuddyX / Buddix</td>
+      <td>LDH JAPANが「buddix」を9類ほかで2件登録済み、さらにニッタ株式会社が「バディックス」を9類で保有（2011年〜）。拒絶リスク大。同名のコンサル会社（buddix.jp）も2025年に出現</td>
+      <td class="ng">✕ 不可</td>
+    </tr>
+  </table>
+
+  <div class="grid2" style="margin-top:16px">
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:8px">「マイバディ」は捨てません</h4>
+      <p style="font-size:13px;color:var(--body)">プラットフォーム内の<b>AIアシスタントの呼び名</b>として活かす設計を提案します。「バディスの中で、あなたを助けるのがマイバディ」という2層構造です。温かい名前の資産をキャラクターとして転用でき、方向性B（顔のあるマーク）とも噛み合います。</p>
+    </div>
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:8px">検索性の注意点</h4>
+      <p style="font-size:13px;color:var(--body)">ダンス&ボーカルグループ「BUDDiiS」が「buddis」のWeb/SNS検索を占有しています（2026年メジャーデビューで今後も増大見込み）。ローンチ時は<b>「バディス 経費」など複合キーワード</b>でのSEO設計を前提にしてください。</p>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <b>⚠️ ドメインについて（早めのご確認をお願いします）</b><br>
+    ・<b>buddis.jp</b> — 2026年6月11日（調査当日）に登録者非公開で新規登録されています。<b>御社で取得されたものでなければ、第三者の先行取得の可能性があります。</b><br>
+    ・<b>buddis.com</b> — 売出し中（$1,595 ≒ 約24万円、買取可能）<br>
+    ・<b>buddis.co.jp</b> — 空き（法人登記後に取得可能）<br>
+    ※ 採用決定時は、ドメインとSNSハンドルの一括確保、および弁理士による正式な商標調査（9類・42類）をおすすめします。
+  </div>
+</div></section>
+
+<!-- ================= 4. INTENT ================= -->
+<section id="intent"><div class="wrap">
+  <div class="sec-label">DESIGN INTENT</div>
+  <h2>④ 設計意図 — 「バディ＝2つ寄り添う」を形の文法にする</h2>
+  <p class="lede">3つの空席（暖色 / ペア構造 / 手の痕跡）を、振り切り方の違う<b>3方向</b>に展開しました。共通するのは「<b>2つの要素が寄り添う・支え合う</b>」構造がどの案にも入っていることと、<b>✦スパークなどのAI記号を一切使わない</b>ことです。</p>
+  <div class="grid3">
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:6px">カラー</h4>
+      <div style="display:flex;gap:8px;margin:10px 0">
+        <div style="width:44px;height:44px;border-radius:10px;background:#B3492E"></div>
+        <div style="width:44px;height:44px;border-radius:10px;background:#E58A64"></div>
+        <div style="width:44px;height:44px;border-radius:10px;background:#E8704F"></div>
+        <div style="width:44px;height:44px;border-radius:10px;background:#2B2723"></div>
+        <div style="width:44px;height:44px;border-radius:10px;background:#F6EFE3;border:1px solid var(--line)"></div>
+      </div>
+      <p style="font-size:12px;color:var(--sub)">レンガ #B3492E / 杏 #E58A64 / 珊瑚 #E8704F / 墨 / 生成り。競合の暖色（MF・ラクス・kubell・海外AI）と重ならない色相を実測値で確認済み。</p>
+    </div>
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:6px">2トーンの意味</h4>
+      <p style="font-size:12px;color:var(--sub);margin-top:10px">濃い色＝支えるバディス、明るい色＝お客様。<b>色の組でも「支え・支えられる」関係</b>を語ります。単色化（モノクロ・FAX・印刷）でも成立する形だけを採用しています。</p>
+    </div>
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:6px">8+プロダクトへの拡張</h4>
+      <p style="font-size:12px;color:var(--sub);margin-top:10px">「バディス経費」「バディス勤怠」…と増えても崩れないよう、<b>共通シンボル＋接頭辞ネーミング＋抑えたサブカラー</b>の体系（freee型の文法 × Microsoft型の色規律）を最初から設計に含めています。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= 5. PROPOSALS ================= -->
+<section id="proposals"><div class="wrap">
+  <div class="sec-label">PROPOSALS</div>
+  <h2>⑤ ロゴ案 — 3方向 × 8案</h2>
+  <p class="lede">「親しみ ⇄ 信頼」の軸のどこに立つかで、A（中間）・B（親しみに振る）・C（信頼・和に振る）の3方向をご用意しました。各方向の★がリード案です。<b>正解はお客様の肌感にあります</b> — 直感の「好き/違う」も大切なフィードバックです。</p>
+
+  <!-- A -->
+  <div class="dir-head"><span class="tag" style="background:var(--brick)">A</span><h3>ペアの幾何学 — Pair Geometry</h3><span class="axis">立ち位置: 中間（親しみ × プラットフォームの格）</span></div>
+  <p class="dir-desc">「B」「b / d」という文字の構造そのものが「2つの形＝ふたり」でできている事実を使った案です。装飾ではなく、名前そのものから生まれたモチーフです。</p>
+  <div class="grid3">
+    <div class="lcard">
+      <h4>A1 ツインD <span style="color:#B3492E">★リード</span></h4>
+      <div class="stage">
+        <svg viewBox="0 0 178 56" width="270">
+          <g transform="translate(8,8) scale(0.5714) translate(-23,-16)">
+            <path d="M 28 16 L 56 16 A 15 15 0 0 1 56 46 L 28 46 A 5 5 0 0 1 23 41 L 23 21 A 5 5 0 0 1 28 16 Z" fill="#E58A64"/>
+            <path d="M 28 50 L 59 50 A 18 18 0 0 1 59 86 L 28 86 A 5 5 0 0 1 23 81 L 23 55 A 5 5 0 0 1 28 50 Z" fill="#B3492E"/>
+          </g>
+          <text x="46" y="29" font-family="'Baloo 2'" font-size="34" font-weight="600" dominant-baseline="central" fill="currentColor" letter-spacing="-0.3">Buddis</text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 178 56" width="270">
+          <g transform="translate(8,8) scale(0.5714) translate(-23,-16)">
+            <path d="M 28 16 L 56 16 A 15 15 0 0 1 56 46 L 28 46 A 5 5 0 0 1 23 41 L 23 21 A 5 5 0 0 1 28 16 Z" fill="#E58A64"/>
+            <path d="M 28 50 L 59 50 A 18 18 0 0 1 59 86 L 28 86 A 5 5 0 0 1 23 81 L 23 55 A 5 5 0 0 1 28 50 Z" fill="#B3492E"/>
+          </g>
+          <text x="46" y="29" font-family="'Baloo 2'" font-size="34" font-weight="600" dominant-baseline="central" fill="currentColor" letter-spacing="-0.3">Buddis</text>
+        </svg>
+      </div>
+      <div class="scale-row">
+        <div class="s"><img src="assets/a1-twin-d-mark.svg" width="16" height="16"><span>16px</span></div>
+        <div class="s"><img src="assets/a1-twin-d-mark.svg" width="32" height="32"><span>32px</span></div>
+        <div class="s"><img src="assets/a1-twin-d-mark.svg" width="64" height="64"><span>64px</span></div>
+      </div>
+      <p class="note"><b>狙い:</b> 2つのDブロックが寄り添ってBになる。下の濃い色が上の明るい色を支える＝「企業を支えるバディ」。小さなファビコンでもBとして読めます。</p>
+    </div>
+    <div class="lcard">
+      <h4>A2 bd ペア</h4>
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="92"><g transform="translate(0,3)" fill="#B3492E">
+          <rect x="21" y="18" width="10" height="58" rx="5"/>
+          <path fill-rule="evenodd" d="M 37 50 A 13 13 0 1 0 37 76 A 13 13 0 1 0 37 50 Z M 37 57 A 6 6 0 1 1 37 69 A 6 6 0 1 1 37 57 Z"/>
+          <rect x="69" y="18" width="10" height="58" rx="5"/>
+          <path fill-rule="evenodd" d="M 63 50 A 13 13 0 1 0 63 76 A 13 13 0 1 0 63 50 Z M 63 57 A 6 6 0 1 1 63 69 A 6 6 0 1 1 63 57 Z"/>
+        </g></svg>
+        <svg viewBox="0 0 130 40" width="150" style="margin-left:6px">
+          <text x="0" y="20" font-family="'Baloo 2'" font-size="26" font-weight="600" dominant-baseline="central" fill="currentColor">buddis</text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 100 100" width="92"><g transform="translate(0,3)" fill="#B3492E">
+          <rect x="21" y="18" width="10" height="58" rx="5"/>
+          <path fill-rule="evenodd" d="M 37 50 A 13 13 0 1 0 37 76 A 13 13 0 1 0 37 50 Z M 37 57 A 6 6 0 1 1 37 69 A 6 6 0 1 1 37 57 Z"/>
+          <rect x="69" y="18" width="10" height="58" rx="5"/>
+          <path fill-rule="evenodd" d="M 63 50 A 13 13 0 1 0 63 76 A 13 13 0 1 0 63 50 Z M 63 57 A 6 6 0 1 1 63 69 A 6 6 0 1 1 63 57 Z"/>
+        </g></svg>
+        <svg viewBox="0 0 130 40" width="150" style="margin-left:6px">
+          <text x="0" y="20" font-family="'Baloo 2'" font-size="26" font-weight="600" dominant-baseline="central" fill="currentColor">buddis</text>
+        </svg>
+      </div>
+      <div class="scale-row">
+        <div class="s"><img src="assets/a2-bd-pair-mark.svg" width="16" height="16"><span>16px</span></div>
+        <div class="s"><img src="assets/a2-bd-pair-mark.svg" width="32" height="32"><span>32px</span></div>
+        <div class="s"><img src="assets/a2-bd-pair-mark.svg" width="64" height="64"><span>64px</span></div>
+      </div>
+      <p class="note"><b>狙い:</b> buddisの子音 b と d は鏡像の双子。ボウル同士が向き合って接する＝「向き合うふたり」。単色で規律のあるバージョンです。</p>
+    </div>
+    <div class="lcard">
+      <h4>A3 dd ワードマーク</h4>
+      <div class="stage">
+        <svg viewBox="0 0 252 72" width="240">
+          <text x="10" y="52" font-family="'Baloo 2'" font-size="48" font-weight="600" letter-spacing="-0.5"><tspan fill="currentColor">bu</tspan><tspan fill="#B3492E">dd</tspan><tspan fill="currentColor">is</tspan></text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 252 72" width="240">
+          <text x="10" y="52" font-family="'Baloo 2'" font-size="48" font-weight="600" letter-spacing="-0.5"><tspan fill="currentColor">bu</tspan><tspan fill="#E58A64">dd</tspan><tspan fill="currentColor">is</tspan></text>
+        </svg>
+      </div>
+      <div class="scale-row" style="align-items:center">
+        <svg viewBox="0 0 100 100" width="44"><rect x="6" y="6" width="88" height="88" rx="24" fill="#B3492E"/><text x="50" y="56" font-family="'Baloo 2'" font-size="52" font-weight="600" fill="#FFF6EC" text-anchor="middle" dominant-baseline="central">dd</text></svg>
+        <span style="font-size:10px;color:#9A8574">アイコンは dd を切り出し</span>
+      </div>
+      <p class="note"><b>狙い:</b> 中央の dd ＝ 並んで立つふたり。文字だけの最小構成。シンプルさ最優先の比較用ベースラインです。</p>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="dir-head"><span class="tag" style="background:var(--coral)">B</span><h3>マイバディ — 顔のあるマーク</h3><span class="axis">立ち位置: 親しみに振り切る（マスコット × AIの擬人化）</span></div>
+  <p class="dir-desc">「AIは怖い・難しそう」と感じる方への最短距離は<b>顔</b>です。世界的にマスコットの再評価が進んでおり（ブランド認知+18%/帰属意識+24%の調査報告）、LINE・Chatworkが育てた日本の「丸み文化」とも好相性。AIアシスタント「マイバディ」をロゴに宿らせる前提の設計です。</p>
+  <div class="grid3">
+    <div class="lcard">
+      <h4>B1 バディフェイス</h4>
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="82">
+          <rect x="10" y="10" width="80" height="80" rx="24" fill="#E8704F"/>
+          <rect x="33" y="36" width="8" height="18" rx="4" fill="#FFF6EC"/>
+          <rect x="59" y="36.5" width="8" height="17" rx="4" fill="#FFF6EC"/>
+          <path d="M 40 63 Q 50 71 60 63" fill="none" stroke="#FFF6EC" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <svg viewBox="0 0 150 40" width="160" style="margin-left:8px">
+          <text x="0" y="20" font-family="'M PLUS Rounded 1c'" font-size="27" font-weight="700" dominant-baseline="central" fill="currentColor">バディス</text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 100 100" width="82">
+          <rect x="10" y="10" width="80" height="80" rx="24" fill="#E8704F"/>
+          <rect x="33" y="36" width="8" height="18" rx="4" fill="#FFF6EC"/>
+          <rect x="59" y="36.5" width="8" height="17" rx="4" fill="#FFF6EC"/>
+          <path d="M 40 63 Q 50 71 60 63" fill="none" stroke="#FFF6EC" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <svg viewBox="0 0 150 40" width="160" style="margin-left:8px">
+          <text x="0" y="20" font-family="'M PLUS Rounded 1c'" font-size="27" font-weight="700" dominant-baseline="central" fill="currentColor">バディス</text>
+        </svg>
+      </div>
+      <div class="scale-row">
+        <div class="s"><img src="assets/b1-buddy-face-mark.svg" width="16" height="16"><span>16px</span></div>
+        <div class="s"><img src="assets/b1-buddy-face-mark.svg" width="32" height="32"><span>32px</span></div>
+        <div class="s"><img src="assets/b1-buddy-face-mark.svg" width="64" height="64"><span>64px</span></div>
+      </div>
+      <p class="note"><b>狙い:</b> アプリアイコンがそのまま「マイバディの顔」。左右の目の高さをわずかにずらした手描きの呼吸。プロダクトごとに表情を変える拡張も可能です。</p>
+    </div>
+    <div class="lcard">
+      <h4>B2 b-フェイス <span style="color:#E8704F">★リード</span></h4>
+      <div class="stage">
+        <svg viewBox="0 0 322 104" width="250">
+          <g transform="translate(2,4)">
+            <rect x="26" y="14" width="12" height="72" rx="6" fill="#E8704F"/>
+            <path fill-rule="evenodd" fill="#E8704F" d="M 58 38 A 24 24 0 1 0 58 86 A 24 24 0 1 0 58 38 Z M 58 51 A 11 11 0 1 1 58 73 A 11 11 0 1 1 58 51 Z"/>
+            <rect x="49" y="56" width="6" height="12" rx="3" fill="#33241D"/>
+            <rect x="61" y="56.5" width="6" height="11.5" rx="3" fill="#33241D"/>
+          </g>
+          <text x="88" y="90" font-family="'Baloo 2'" font-size="88" font-weight="600" letter-spacing="-1.5" fill="currentColor">uddis</text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 322 104" width="250">
+          <g transform="translate(2,4)">
+            <rect x="26" y="14" width="12" height="72" rx="6" fill="#E8704F"/>
+            <path fill-rule="evenodd" fill="#E8704F" d="M 58 38 A 24 24 0 1 0 58 86 A 24 24 0 1 0 58 38 Z M 58 51 A 11 11 0 1 1 58 73 A 11 11 0 1 1 58 51 Z"/>
+            <rect x="49" y="56" width="6" height="12" rx="3" fill="#FFF6EC"/>
+            <rect x="61" y="56.5" width="6" height="11.5" rx="3" fill="#FFF6EC"/>
+          </g>
+          <text x="88" y="90" font-family="'Baloo 2'" font-size="88" font-weight="600" letter-spacing="-1.5" fill="currentColor">uddis</text>
+        </svg>
+      </div>
+      <div class="scale-row">
+        <div class="s"><img src="assets/b2-b-face-mark.svg" width="16" height="16"><span>16px</span></div>
+        <div class="s"><img src="assets/b2-b-face-mark.svg" width="32" height="32"><span>32px</span></div>
+        <div class="s"><img src="assets/b2-b-face-mark.svg" width="64" height="64"><span>64px</span></div>
+      </div>
+      <p class="note"><b>狙い:</b> マークの b が頭文字を兼ねて「b + uddis」で社名が完成。bのボウルの中に目＝AIバディが住んでいる、という物語の引き算構造です。</p>
+    </div>
+    <div class="lcard">
+      <h4>B3 ふたり</h4>
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="82">
+          <rect x="8" y="30" width="52" height="54" rx="16" fill="#B3492E"/>
+          <rect x="64" y="50" width="32" height="34" rx="11" fill="#E58A64"/>
+          <rect x="23" y="44" width="6.5" height="14" rx="3.2" fill="#FFF6EC"/>
+          <rect x="39" y="44.5" width="6.5" height="13.5" rx="3.2" fill="#FFF6EC"/>
+          <rect x="72.5" y="60" width="5" height="10" rx="2.5" fill="#FFF6EC"/>
+          <rect x="83" y="60.4" width="5" height="9.6" rx="2.5" fill="#FFF6EC"/>
+        </svg>
+        <svg viewBox="0 0 150 40" width="160" style="margin-left:8px">
+          <text x="0" y="20" font-family="'M PLUS Rounded 1c'" font-size="27" font-weight="700" dominant-baseline="central" fill="currentColor">バディス</text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 100 100" width="82">
+          <rect x="8" y="30" width="52" height="54" rx="16" fill="#B3492E"/>
+          <rect x="64" y="50" width="32" height="34" rx="11" fill="#E58A64"/>
+          <rect x="23" y="44" width="6.5" height="14" rx="3.2" fill="#FFF6EC"/>
+          <rect x="39" y="44.5" width="6.5" height="13.5" rx="3.2" fill="#FFF6EC"/>
+          <rect x="72.5" y="60" width="5" height="10" rx="2.5" fill="#FFF6EC"/>
+          <rect x="83" y="60.4" width="5" height="9.6" rx="2.5" fill="#FFF6EC"/>
+        </svg>
+        <svg viewBox="0 0 150 40" width="160" style="margin-left:8px">
+          <text x="0" y="20" font-family="'M PLUS Rounded 1c'" font-size="27" font-weight="700" dominant-baseline="central" fill="currentColor">バディス</text>
+        </svg>
+      </div>
+      <div class="scale-row">
+        <div class="s"><img src="assets/b3-futari-mark.svg" width="16" height="16"><span>16px</span></div>
+        <div class="s"><img src="assets/b3-futari-mark.svg" width="32" height="32"><span>32px</span></div>
+        <div class="s"><img src="assets/b3-futari-mark.svg" width="64" height="64"><span>64px</span></div>
+      </div>
+      <p class="note"><b>狙い:</b> 大きい方＝バディス、小さい方＝隣にいるマイバディ。「ふたり」が一目で伝わる最直球案。最もキャラクター性が強い分、堅い場面との相性は要検討です。</p>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="dir-head"><span class="tag" style="background:var(--sumi)">C</span><h3>濁点ペア — Dakuten Pair</h3><span class="axis">立ち位置: 信頼・和に寄せる（和文主体 × 手の痕跡）</span></div>
+  <p class="dir-desc">「<b>バ</b>ディス」の濁点（゛）は、最初から2つ寄り添っています。日本語の文字体系に埋まっていたペアシンボルの発掘です。カタカナ主役のロックアップは、英字が読みにくい方への可読性にも直結します。競合に和文×墨×暖色アクセントのロゴは存在しません。</p>
+  <div class="grid3">
+    <div class="lcard">
+      <h4>C1 濁点ペア・墨 <span style="color:#B3492E">★リード</span></h4>
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="72">
+          <rect x="32" y="24" width="13" height="36" rx="6.5" fill="#B3492E" transform="rotate(35 38.5 42)"/>
+          <rect x="56.5" y="44" width="13" height="32" rx="6.5" fill="#E58A64" transform="rotate(32 63 60)"/>
+        </svg>
+        <svg viewBox="0 0 170 44" width="176" style="margin-left:4px">
+          <text x="0" y="22" font-family="'Kiwi Maru'" font-size="34" font-weight="500" dominant-baseline="central" fill="currentColor">バディス</text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 100 100" width="72">
+          <rect x="32" y="24" width="13" height="36" rx="6.5" fill="#B3492E" transform="rotate(35 38.5 42)"/>
+          <rect x="56.5" y="44" width="13" height="32" rx="6.5" fill="#E58A64" transform="rotate(32 63 60)"/>
+        </svg>
+        <svg viewBox="0 0 170 44" width="176" style="margin-left:4px">
+          <text x="0" y="22" font-family="'Kiwi Maru'" font-size="34" font-weight="500" dominant-baseline="central" fill="currentColor">バディス</text>
+        </svg>
+      </div>
+      <div class="scale-row">
+        <div class="s"><img src="assets/c1-dakuten-badge.svg" width="16" height="16"><span>16px</span></div>
+        <div class="s"><img src="assets/c1-dakuten-badge.svg" width="32" height="32"><span>32px</span></div>
+        <div class="s"><img src="assets/c1-dakuten-badge.svg" width="64" height="64"><span>64px</span></div>
+      </div>
+      <p class="note"><b>狙い:</b> 濁点の2画は長さと角度をわずかに変え、書き文字の呼吸を残しています。確定後は社名ロゴの濁点そのものをこのシンボルに置き換え、名前とマークが同じDNAになります。</p>
+    </div>
+    <div class="lcard">
+      <h4>C1+ 濁点置換のイメージ</h4>
+      <div class="stage" style="height:282px;flex-direction:column;gap:10px">
+        <svg viewBox="0 0 120 120" width="140">
+          <text x="10" y="96" font-family="'Kiwi Maru'" font-size="96" fill="currentColor">ハ</text>
+          <rect x="84" y="6" width="11" height="28" rx="5.5" fill="#B3492E" transform="rotate(35 89.5 20)"/>
+          <rect x="103" y="22" width="11" height="25" rx="5.5" fill="#E58A64" transform="rotate(32 108.5 34.5)"/>
+        </svg>
+        <span style="font-size:11px;color:#8A7464">「バ」の濁点がブランドシンボルになる</span>
+      </div>
+      <p class="note">アイコンと社名が同じ形を共有するため、説明がなくても「あの2つの点＝バディス」と覚えてもらえます。次の段階で全文字に展開します。</p>
+    </div>
+    <div class="lcard">
+      <h4>C2 濁点ペア・深緑</h4>
+      <div class="stage">
+        <svg viewBox="0 0 100 100" width="82">
+          <rect x="6" y="6" width="88" height="88" rx="24" fill="#1F5638"/>
+          <rect x="32" y="26" width="13" height="34" rx="6.5" fill="#F6EFE3" transform="rotate(35 38.5 43)"/>
+          <rect x="56" y="44" width="13" height="31" rx="6.5" fill="#F6EFE3" transform="rotate(32 62.5 59.5)"/>
+        </svg>
+        <svg viewBox="0 0 170 44" width="176" style="margin-left:8px">
+          <text x="0" y="22" font-family="'Zen Maru Gothic'" font-size="34" font-weight="700" dominant-baseline="central" fill="#1F5638">バディス</text>
+        </svg>
+      </div>
+      <div class="stage dark">
+        <svg viewBox="0 0 100 100" width="82">
+          <rect x="6" y="6" width="88" height="88" rx="24" fill="#F6EFE3"/>
+          <rect x="32" y="26" width="13" height="34" rx="6.5" fill="#1F5638" transform="rotate(35 38.5 43)"/>
+          <rect x="56" y="44" width="13" height="31" rx="6.5" fill="#1F5638" transform="rotate(32 62.5 59.5)"/>
+        </svg>
+        <svg viewBox="0 0 170 44" width="176" style="margin-left:8px">
+          <text x="0" y="22" font-family="'Zen Maru Gothic'" font-size="34" font-weight="700" dominant-baseline="central" fill="#F6EFE3">バディス</text>
+        </svg>
+      </div>
+      <div class="scale-row">
+        <div class="s"><img src="assets/c2-dakuten-green-badge.svg" width="16" height="16"><span>16px</span></div>
+        <div class="s"><img src="assets/c2-dakuten-green-badge.svg" width="32" height="32"><span>32px</span></div>
+        <div class="s"><img src="assets/c2-dakuten-green-badge.svg" width="64" height="64"><span>64px</span></div>
+      </div>
+      <p class="note"><b>狙い:</b> 同じ濁点シンボルを「老舗の安心感」の深緑で。落ち着き最優先の保守案です（この場合、暖色戦略は色ごと深緑に切り替えます）。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= 6. FAMILY ================= -->
+<section id="family"><div class="wrap">
+  <div class="sec-label">PRODUCT FAMILY</div>
+  <h2>⑥ ファミリー展開 — 8つ以上のプロダクトに増えても崩れない</h2>
+  <p class="lede">バディス帳票・経費・勤怠・名刺・ファイル・チャット・AI・分析…と展開しても、<b>共通シンボル＋「バディス〇〇」＋控えめなサブカラー</b>で一目で同じ家族と分かる体系です（例: A1マークで展開した場合）。</p>
+  <div class="family">
+    <div class="family-row">
+      <svg viewBox="0 0 200 44" width="216">
+        <g transform="translate(4,4) scale(0.5143) translate(-23,-16)">
+          <path d="M 28 16 L 56 16 A 15 15 0 0 1 56 46 L 28 46 A 5 5 0 0 1 23 41 L 23 21 A 5 5 0 0 1 28 16 Z" fill="#E58A64"/>
+          <path d="M 28 50 L 59 50 A 18 18 0 0 1 59 86 L 28 86 A 5 5 0 0 1 23 81 L 23 55 A 5 5 0 0 1 28 50 Z" fill="#B3492E"/>
+        </g>
+        <text x="40" y="22" font-family="'Zen Kaku Gothic New'" font-size="22" font-weight="700" dominant-baseline="central" fill="currentColor">バディス<tspan fill="#2E7D6E">経費</tspan></text>
+      </svg>
+      <svg viewBox="0 0 200 44" width="216">
+        <g transform="translate(4,4) scale(0.5143) translate(-23,-16)">
+          <path d="M 28 16 L 56 16 A 15 15 0 0 1 56 46 L 28 46 A 5 5 0 0 1 23 41 L 23 21 A 5 5 0 0 1 28 16 Z" fill="#E58A64"/>
+          <path d="M 28 50 L 59 50 A 18 18 0 0 1 59 86 L 28 86 A 5 5 0 0 1 23 81 L 23 55 A 5 5 0 0 1 28 50 Z" fill="#B3492E"/>
+        </g>
+        <text x="40" y="22" font-family="'Zen Kaku Gothic New'" font-size="22" font-weight="700" dominant-baseline="central" fill="currentColor">バディス<tspan fill="#B07A23">勤怠</tspan></text>
+      </svg>
+      <svg viewBox="0 0 200 44" width="216">
+        <g transform="translate(4,4) scale(0.5143) translate(-23,-16)">
+          <path d="M 28 16 L 56 16 A 15 15 0 0 1 56 46 L 28 46 A 5 5 0 0 1 23 41 L 23 21 A 5 5 0 0 1 28 16 Z" fill="#E58A64"/>
+          <path d="M 28 50 L 59 50 A 18 18 0 0 1 59 86 L 28 86 A 5 5 0 0 1 23 81 L 23 55 A 5 5 0 0 1 28 50 Z" fill="#B3492E"/>
+        </g>
+        <text x="40" y="22" font-family="'Zen Kaku Gothic New'" font-size="22" font-weight="700" dominant-baseline="central" fill="currentColor">バディス<tspan fill="#1F6E78">AI</tspan></text>
+      </svg>
+    </div>
+    <p class="small" style="margin-top:14px">※ 製品名は日本語（経費・勤怠・帳票…）を推奨します。「名前を見れば何のツールか分かる」ことが、ITに不慣れな方への最大の使いやすさです。</p>
+  </div>
+</div></section>
+
+<!-- ================= 7. FEEDBACK ================= -->
+<section id="feedback"><div class="wrap">
+  <div class="sec-label">YOUR FEEDBACK</div>
+  <h2>⑦ フィードバックのお願い</h2>
+  <p class="lede">以下の5点をお聞かせください。<b>「なんとなくこれが好き」「この感じは違う」という直感も、理由が言えなくても大歓迎です</b>。いただいた内容で方向性を1つに絞り、次の段階（精緻化・ロゴタイプの作り込み・使用シーン展開）へ進みます。</p>
+
+  <div class="q-card">
+    <span class="qn">Q1</span>
+    <h4>どの方向・どの案に魅力を感じますか？（第1候補と第2候補）</h4>
+    <p>迷われたら「この2つで迷う」でも構いません。組み合わせ（例: A1の構造×Bの顔）のご要望も歓迎です。</p>
+    <div class="opts"><span>A1 ツインD</span><span>A2 bdペア</span><span>A3 dd</span><span>B1 バディフェイス</span><span>B2 b-フェイス</span><span>B3 ふたり</span><span>C1 濁点・墨</span><span>C2 濁点・深緑</span></div>
+  </div>
+  <div class="q-card">
+    <span class="qn">Q2</span>
+    <h4>「親しみ ⇄ 信頼」のどのあたりに立ちたいですか？</h4>
+    <p>顔があるほど親しみは増しますが、金融機関や士業の方に見せる場面では堅さも必要です。御社の営業現場の肌感で、5段階のどこが心地よいか教えてください。</p>
+    <div class="opts"><span>1 とにかく親しみ（B3寄り）</span><span>2</span><span>3 中間（A寄り）</span><span>4</span><span>5 信頼・落ち着き（C寄り）</span></div>
+  </div>
+  <div class="q-card">
+    <span class="qn">Q3</span>
+    <h4>サービス名は「バディス / BUDDIS」で確定してよいですか？</h4>
+    <p>商標調査の結果、3候補の中で登録余地があるのはバディスのみでした（③参照）。確定いただければ、弁理士による正式調査と出願準備を推奨します。「マイバディ」はAIアシスタントの呼称として活かす提案です。</p>
+  </div>
+  <div class="q-card">
+    <span class="qn">Q4</span>
+    <h4>buddis.jp は御社で取得されたものですか？</h4>
+    <p>2026年6月11日に登録者非公開で取得されています。御社でなければ対応をご相談させてください（buddis.co.jp は空き、buddis.com は約24万円で買取可能です）。</p>
+  </div>
+  <div class="q-card">
+    <span class="qn">Q5</span>
+    <h4>避けたい色・イメージ・「こうは見られたくない」はありますか？</h4>
+    <p>例:「赤系は社内規定でNG」「かわいすぎるのは避けたい」「〇〇社に似ていると言われたくない」など、制約があれば早い段階で教えてください。</p>
+  </div>
+
+  <div class="card" style="margin-top:20px;background:var(--dark);color:#E5D5C5;border:none">
+    <p style="font-size:13.5px">ご返信は、このボードへのコメント・メール・お打ち合わせ、いずれの形でも結構です。<br>フィードバックをいただき次第、方向性を1案に絞って <b>iteration 2（ロゴタイプの作り込み・モノクロ/白抜き/最小サイズ規定・名刺/画面モックでの検証）</b>に進みます。</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>株式会社1137</b> — BUDDIS ロゴデザイン提案 Direction Board v1（iteration 1 / 2026年6月）</p>
+  <p>本ボードの調査は、各社公式ブランドサイト・プレスリリース・J-PlatPat等の一次情報（出典約60件）に基づき、全件を別途事実検証しています。掲載した他社ロゴの色・名称は比較研究目的の引用です。本資料の無断転載はご遠慮ください。</p>
+</div></footer>
+
+</body>
+</html>
