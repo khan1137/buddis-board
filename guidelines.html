@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BUDDIS ロゴ・ガイドライン（エンジニア＆営業向け）| 1137</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#33241D; --brick:#B3492E; --persimmon:#E58A64; --cream:#F6EFE3;
+    --bg:#F4EFE9; --card:#FBF7F2; --dark:#221A16; --line:#E5DACD; --sub:#8A7464; --body:#5C4A3D;
+    --ok:#1F6E47; --ng:#B3372E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);font-family:'Zen Kaku Gothic New',sans-serif;color:var(--ink);line-height:1.8}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+  code,kbd{font-family:'SF Mono','Consolas',monospace;font-size:.88em}
+
+  .hero{background:var(--dark);color:#F5EDE4;padding:64px 0 48px}
+  .hero .kicker{font-size:12px;letter-spacing:.22em;color:#C49A6C;font-weight:700}
+  .hero h1{font-size:30px;font-weight:700;letter-spacing:.03em;margin:14px 0 10px}
+  .hero p{font-size:14px;color:#C9B8AC;max-width:660px}
+  .hero .who{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+  .hero .who span{font-size:12px;background:#3A2C24;border:1px solid #54402F;color:#EBD9C8;padding:6px 13px;border-radius:99px}
+  .toc{margin-top:26px;display:flex;gap:9px;flex-wrap:wrap}
+  .toc a{font-size:12px;color:#EBD9C8;background:#3A2C24;border:1px solid #54402F;padding:6px 13px;border-radius:8px;text-decoration:none}
+  .toc a:hover{background:#4A382C}
+  .backlink{font-size:12px;color:#C49A6C;text-decoration:none;border-bottom:1px solid #54402F}
+
+  section{padding:56px 0 8px}
+  .sec-label{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--brick)}
+  h2{font-size:23px;font-weight:700;margin:8px 0 8px}
+  h3{font-size:16px;font-weight:700;margin:26px 0 10px}
+  .lede{font-size:14.5px;color:var(--body);max-width:760px;margin-bottom:24px}
+  .lede b{color:var(--ink)}
+  p.note{font-size:13px;color:var(--body)}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:820px){.grid3,.grid2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h4{font-size:14px;margin-bottom:8px}
+  .card .stage{background:#fff;border-radius:10px;height:96px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .card.dark .stage{background:var(--dark)}
+  .card p{font-size:12.5px;color:var(--sub);line-height:1.7}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:12px;overflow:hidden;margin-top:6px}
+  th,td{padding:11px 13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#EFE6DA;font-size:12px;letter-spacing:.03em}
+  td code{background:var(--cream);padding:2px 6px;border-radius:5px;color:var(--ink)}
+  .ok{color:var(--ok);font-weight:700}.ng{color:var(--ng);font-weight:700}
+
+  /* color system */
+  .swatches{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+  .sw{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;width:160px}
+  .sw .chip{height:72px}
+  .sw .meta{padding:10px 12px}
+  .sw .meta b{font-size:13px}
+  .sw .meta code{font-size:11px;color:var(--sub);display:block}
+  .sw .meta span{font-size:11px;color:var(--sub)}
+  .rule{background:var(--card);border-left:4px solid var(--brick);border-radius:0 12px 12px 0;padding:16px 20px;margin:10px 0}
+  .rule h4{font-size:14.5px;margin-bottom:4px}
+  .rule p{font-size:13px;color:var(--body)}
+
+  .decision{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 22px}
+  .decision .step{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .decision .step:last-child{border:none}
+  .decision .q{font-size:13px;font-weight:700;min-width:200px}
+  .decision .a{font-size:13px;color:var(--body)}
+  .decision .a code{background:var(--cream);padding:2px 7px;border-radius:5px}
+
+  pre{background:var(--dark);color:#EBDCCB;border-radius:12px;padding:18px 20px;overflow:auto;font-size:12.5px;line-height:1.7;margin:8px 0}
+  pre .c{color:#9A8472}
+  pre .t{color:#E0A57E}
+  pre .k{color:#C9A0C9}
+
+  .dl{display:flex;flex-direction:column;gap:7px}
+  .dodont{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:820px){.dodont{grid-template-columns:1fr}}
+  .dobox,.dontbox{border-radius:12px;padding:18px 20px;font-size:13px}
+  .dobox{background:#EAF3EE;border:1px solid #BFD8C9}
+  .dontbox{background:#FBECE9;border:1px solid #E8C4BC}
+  .dobox h4{color:var(--ok);font-size:14px;margin-bottom:8px}
+  .dontbox h4{color:var(--ng);font-size:14px;margin-bottom:8px}
+  .dobox li,.dontbox li{margin:5px 0 5px 18px}
+
+  .clearspace{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;gap:30px;align-items:center;flex-wrap:wrap;justify-content:center}
+
+  footer{margin-top:64px;background:var(--dark);color:#9D8A7B;padding:34px 0;font-size:11.5px;line-height:2}
+  footer b{color:#E5D5C5;font-weight:500}
+  .small{font-size:11.5px;color:var(--sub)}
+</style>
+</head>
+<body>
+
+<div class="hero"><div class="wrap">
+  <div class="kicker">BRAND ASSET GUIDELINE</div>
+  <h1>BUDDIS ロゴ・ガイドライン</h1>
+  <p>ロゴデータを「正しく・速く・迷わず」使うための実務ガイドです。エンジニアの実装と営業の資料づくり、どちらもこの1ページで完結します。</p>
+  <div class="who"><span>👩‍💻 エンジニア向け実装あり</span><span>📊 営業・資料づくり向け早見表あり</span><span>🎨 色の使い分けの考え方</span></div>
+  <div class="toc">
+    <a href="#quick">迷ったらこれ</a>
+    <a href="#scene">場面別 早見表</a>
+    <a href="#color">色の使い分け</a>
+    <a href="#dev">実装ガイド</a>
+    <a href="#space">余白・最小サイズ</a>
+    <a href="#dodont">やってOK / NG</a>
+    <a href="#naming">ファイル名の読み方</a>
+    <a href="#dl">ダウンロード</a>
+  </div>
+  <p style="margin-top:18px"><a class="backlink" href="./">← 提案ボード（リサーチ・コンセプト）に戻る</a></p>
+</div></div>
+
+<!-- ===== QUICK ===== -->
+<section id="quick"><div class="wrap">
+  <div class="sec-label">QUICK START</div>
+  <h2>迷ったら、これを使う</h2>
+  <p class="lede">細かいことを抜きにして、まずはこの3つを覚えれば9割の場面は足ります。</p>
+  <div class="grid3">
+    <div class="card">
+      <h4>Web・アプリの基本</h4>
+      <div class="stage"><img src="assets/delivery/buddis-primary-color.svg" width="150" alt="buddis 基本ロゴ"></div>
+      <p><code>buddis-primary</code><br>サイトやアプリのヘッダーはこれ。背景が暗い場面では <code>-white</code> に差し替え。</p>
+    </div>
+    <div class="card">
+      <h4>初対面・表紙・看板</h4>
+      <div class="stage"><img src="assets/delivery/buddis-bilingual-color.svg" width="135" alt="バディス併記ロゴ"></div>
+      <p><code>buddis-bilingual</code><br>読み方「バディス」が乗った版。営業資料の表紙・LP のファーストビューに。</p>
+    </div>
+    <div class="card">
+      <h4>アイコン・ファビコン</h4>
+      <div class="stage"><img src="assets/delivery/buddis-icon-app-cream.svg" width="72" alt="アプリアイコン"></div>
+      <p><code>buddis-icon-app-cream</code><br>アプリアイコン・SNSアイコン。ブラウザタブ用は <code>buddis-favicon</code>。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== SCENE ===== -->
+<section id="scene"><div class="wrap">
+  <div class="sec-label">CHEAT SHEET</div>
+  <h2>場面別 早見表</h2>
+  <p class="lede">「この場面ではどのファイル？」を一覧にしました。形式（SVG/PNG/JPG）の選び方は <a href="#dl" style="color:var(--brick)">ダウンロード欄</a>に。</p>
+  <table>
+    <tr><th style="width:34%">場面</th><th>使うファイル</th><th style="width:18%">形式</th></tr>
+    <tr><td>Webサイト / アプリのヘッダー</td><td><code>buddis-primary-color</code>（暗い背景は <code>-white</code>）</td><td>SVG</td></tr>
+    <tr><td>サイトのファビコン（タブ）</td><td><code>buddis-favicon</code></td><td>SVG + PNG</td></tr>
+    <tr><td>アプリアイコン / スマホホーム</td><td><code>buddis-icon-app-cream</code>（濃地は <code>-ink</code> / <code>-brick</code>）</td><td>SVG + PNG</td></tr>
+    <tr><td>営業資料・提案書の表紙</td><td><code>buddis-bilingual-color</code></td><td>SVG / PNG</td></tr>
+    <tr><td>スライド本文・ヘッダー（背景に重ねる）</td><td><code>buddis-primary-color</code>（透過）</td><td>PNG</td></tr>
+    <tr><td>Word・メール署名（透過が使えない）</td><td><code>buddis-primary-color</code></td><td>JPG</td></tr>
+    <tr><td>請求書・契約書・封筒（和文を読ませる）</td><td><code>buddis-stack-color</code> / <code>buddis-japanese-color</code></td><td>SVG</td></tr>
+    <tr><td>名刺・印刷物（モノクロ印刷）</td><td><code>buddis-primary-black</code></td><td>SVG</td></tr>
+    <tr><td>写真・動画の上に置く</td><td><code>buddis-primary-white</code></td><td>PNG（透過）</td></tr>
+    <tr><td>各プロダクト（経費・勤怠 等）</td><td><code>buddis-family-keihi</code> など</td><td>SVG</td></tr>
+    <tr><td>SNSプロフィール（正方形）</td><td><code>buddis-vertical-color</code> / <code>buddis-icon-app-cream</code></td><td>PNG</td></tr>
+  </table>
+</div></section>
+
+<!-- ===== COLOR ===== -->
+<section id="color"><div class="wrap">
+  <div class="sec-label">COLOR SYSTEM</div>
+  <h2>色の使い分け — 考え方</h2>
+  <p class="lede">「どの色を、どこに、どれくらい使うか」の判断基準です。<b>覚えることは1つだけ:「暖色はバディの灯り。アクセントに絞って使い、地は生成りと墨でつくる」</b>。</p>
+
+  <h3>ブランドカラー（この4色＋白黒だけ）</h3>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#B3492E"></div><div class="meta"><b>レンガ Brick</b><code>#B3492E</code><span>メインアクセント。dd・濁点・ボタン・リンク</span></div></div>
+    <div class="sw"><div class="chip" style="background:#E58A64"></div><div class="meta"><b>杏 Persimmon</b><code>#E58A64</code><span>サブアクセント。装飾・大きい見出し</span></div></div>
+    <div class="sw"><div class="chip" style="background:#33241D"></div><div class="meta"><b>墨 Ink</b><code>#33241D</code><span>文字の基本色</span></div></div>
+    <div class="sw"><div class="chip" style="background:#F6EFE3;border-bottom:1px solid #E5DACD"></div><div class="meta"><b>生成り Cream</b><code>#F6EFE3</code><span>背景・アイコン地</span></div></div>
+  </div>
+
+  <h3>考え方は3つだけ</h3>
+  <div class="rule"><h4>1. 暖色は「アクセント」。塗りつぶさない</h4><p>レンガ・杏は、ボタン・リンク・dd・濁点・強調など<b>「ここぞ」の一点</b>に使います。画面全体をレンガ色で塗ると安っぽくなります。地（背景）は生成り <code>#F6EFE3</code> か白、文字は墨 <code>#33241D</code> が基本です。</p></div>
+  <div class="rule"><h4>2. 青に逃げない</h4><p>競合の業務SaaSはほぼ全部が青。Buddis の暖色は<b>市場で唯一の温度＝最大の差別化</b>です。UI でも、ブランドを表す色に青・水色を使わないでください。※「成功＝緑／エラー＝赤」のような<b>機能的な状態色</b>は最小限OK。ただしブランドの主役にはしない。</p></div>
+  <div class="rule"><h4>3. ファミリーのサブカラーは暖色・控えめ・文字だけ</h4><p>製品の見分け（経費・勤怠…）に使うサブカラーは、<b>暖色の同じトーン</b>で揃え、<b>製品名の文字だけ</b>に使います。背景や大きな面には塗りません。色分けが主張しすぎないのが Buddis らしさです。</p></div>
+
+  <h3>背景に応じた「版」の選び方</h3>
+  <div class="decision">
+    <div class="step"><div class="q">明るい背景（白・生成り）</div><div class="a">→ <code>-color</code>（フルカラー）</div></div>
+    <div class="step"><div class="q">暗い背景・濃い色の面</div><div class="a">→ <code>-reverse</code>（暖色のまま反転）</div></div>
+    <div class="step"><div class="q">写真・動画・柄の上</div><div class="a">→ <code>-white</code>（白1色でくっきり）</div></div>
+    <div class="step"><div class="q">モノクロ印刷・FAX・刻印</div><div class="a">→ <code>-black</code>（黒1色）</div></div>
+  </div>
+
+  <h3>コントラスト（読みやすさ / アクセシビリティ）</h3>
+  <p class="note" style="margin-bottom:8px">文字に使うときは、背景とのコントラスト比 4.5:1 以上（WCAG AA）を守ってください。実測値:</p>
+  <table>
+    <tr><th>組み合わせ</th><th>コントラスト比</th><th>判定（文字）</th></tr>
+    <tr><td>墨 <code>#33241D</code> × 白</td><td>14.9 : 1</td><td class="ok">◎ 本文OK</td></tr>
+    <tr><td>レンガ <code>#B3492E</code> × 白</td><td>5.4 : 1</td><td class="ok">○ 本文・リンク・ボタンOK</td></tr>
+    <tr><td>白 × レンガ <code>#B3492E</code>（ボタン）</td><td>5.4 : 1</td><td class="ok">○ CTAボタンの白文字OK</td></tr>
+    <tr><td>杏 <code>#E58A64</code> × 白</td><td>2.6 : 1</td><td class="ng">△ 小さい文字NG → 大見出し・装飾のみ</td></tr>
+  </table>
+</div></section>
+
+<!-- ===== DEV ===== -->
+<section id="dev"><div class="wrap">
+  <div class="sec-label">FOR ENGINEERS</div>
+  <h2>実装ガイド（コピペ可）</h2>
+  <p class="lede">林さん・山田さん向け。そのまま貼って使えるスニペットです。<b>原則 SVG を使い、ラスタが要る所だけ PNG</b>。SVG は文字アウトライン化済みなのでフォント読み込み不要です。</p>
+
+  <h3>① カラートークン（CSS変数）</h3>
+  <pre><span class="c">/* ブランドカラーは必ず変数経由で使う（直書き禁止） */</span>
+<span class="k">:root</span> {
+  <span class="t">--buddis-brick</span>:     #B3492E; <span class="c">/* メインアクセント */</span>
+  <span class="t">--buddis-persimmon</span>: #E58A64; <span class="c">/* サブ・装飾 */</span>
+  <span class="t">--buddis-ink</span>:       #33241D; <span class="c">/* 文字 */</span>
+  <span class="t">--buddis-cream</span>:     #F6EFE3; <span class="c">/* 背景・アイコン地 */</span>
+}
+<span class="c">/* 例: CTAボタン */</span>
+.btn-primary { background: <span class="t">var(--buddis-brick)</span>; color:#fff; }</pre>
+
+  <h3>② ファビコン / アプリアイコン</h3>
+  <pre><span class="c">&lt;!-- &lt;head&gt; 内 --&gt;</span>
+<span class="k">&lt;link</span> rel=<span class="t">"icon"</span> type=<span class="t">"image/svg+xml"</span> href=<span class="t">"/buddis-favicon.svg"</span><span class="k">&gt;</span>
+<span class="k">&lt;link</span> rel=<span class="t">"icon"</span> type=<span class="t">"image/png"</span> sizes=<span class="t">"32x32"</span> href=<span class="t">"/buddis-favicon.png"</span><span class="k">&gt;</span>
+<span class="k">&lt;link</span> rel=<span class="t">"apple-touch-icon"</span> href=<span class="t">"/buddis-icon-app-cream.png"</span><span class="k">&gt;</span></pre>
+
+  <h3>③ ヘッダーロゴ（ダークモード自動切替）</h3>
+  <pre><span class="k">&lt;picture&gt;</span>
+  <span class="c">&lt;!-- ダークモードでは白版に差し替え --&gt;</span>
+  <span class="k">&lt;source</span> srcset=<span class="t">"/buddis-primary-white.svg"</span> media=<span class="t">"(prefers-color-scheme: dark)"</span><span class="k">&gt;</span>
+  <span class="k">&lt;img</span> src=<span class="t">"/buddis-primary-color.svg"</span> alt=<span class="t">"BUDDIS"</span> width=<span class="t">"132"</span> height=<span class="t">"34"</span><span class="k">&gt;</span>
+<span class="k">&lt;/picture&gt;</span></pre>
+
+  <h3>④ 拡大して使う場合（PNG・高解像度対応）</h3>
+  <pre><span class="c">&lt;!-- SVG が使えない箇所のみ。PNGは横2400px / アイコン1024px --&gt;</span>
+<span class="k">&lt;img</span> src=<span class="t">"/buddis-primary-color.png"</span> alt=<span class="t">"BUDDIS"</span>
+     width=<span class="t">"264"</span> style=<span class="t">"max-width:100%;height:auto"</span><span class="k">&gt;</span></pre>
+
+  <div class="card" style="margin-top:18px;background:var(--cream)">
+    <p class="note"><b>実装の原則</b> ／ ①色はハードコードせず CSS 変数で ／ ②ロゴ画像には必ず <code>alt="BUDDIS"</code> ／ ③ロゴを縦横別々に伸ばさない（<code>height:auto</code>） ／ ④暗い背景には <code>-white</code> 版 ／ ⑤ロゴの上に文字や別画像を重ねない</p>
+  </div>
+</div></section>
+
+<!-- ===== SPACE ===== -->
+<section id="space"><div class="wrap">
+  <div class="sec-label">CLEAR SPACE & MIN SIZE</div>
+  <h2>余白と最小サイズ</h2>
+  <p class="lede">ロゴが窮屈に見えたり、潰れて読めなくなるのを防ぐルールです。</p>
+  <div class="grid2">
+    <div class="card">
+      <h4>余白（アイソレーション）</h4>
+      <div class="clearspace" style="height:130px">
+        <div style="position:relative;padding:26px;border:1px dashed var(--persimmon);border-radius:8px">
+          <img src="assets/delivery/buddis-primary-color.svg" width="150" alt="余白の例">
+        </div>
+      </div>
+      <p class="note">ロゴの周囲に、最低でも <b>「b の文字の高さの半分」</b>以上の余白を空けます。他の文字・画像・端と近づけすぎないこと。</p>
+    </div>
+    <div class="card">
+      <h4>最小サイズ</h4>
+      <div class="clearspace" style="height:130px;gap:24px">
+        <div style="text-align:center"><img src="assets/delivery/buddis-primary-color.svg" height="20" alt="最小サイズ ロゴ"><div class="small" style="margin-top:8px">ロゴ: 高さ20px / 幅80px 以上</div></div>
+        <div style="text-align:center"><img src="assets/delivery/buddis-favicon.svg" width="32" height="32" alt="最小 アイコン"><div class="small" style="margin-top:8px">アイコン: 16px まで対応</div></div>
+      </div>
+      <p class="note">これより小さくすると濁点・dd が潰れて読めません。小さく置きたい時は単体ロゴかファビコンを使ってください。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== DO/DONT ===== -->
+<section id="dodont"><div class="wrap">
+  <div class="sec-label">DO / DON'T</div>
+  <h2>やってOK / やってはいけないこと</h2>
+  <div class="dodont" style="margin-top:8px">
+    <div class="dobox">
+      <h4>✓ OK</h4>
+      <ul>
+        <li>提供データ（SVG/PNG/JPG）をそのまま使う</li>
+        <li>背景に合わせて color / white / black を選ぶ</li>
+        <li>縦横同率で拡大・縮小する</li>
+        <li>色は CSS 変数（ブランドカラー）から使う</li>
+        <li>余白を十分に取る</li>
+      </ul>
+    </div>
+    <div class="dontbox">
+      <h4>✕ NG</h4>
+      <ul>
+        <li>色を変える / 影・縁取り・グラデを足す</li>
+        <li>縦横の比率を変えて伸ばす・潰す</li>
+        <li>濁点（バ・ディの点）や dd の位置・形を動かす</li>
+        <li>フォントで文字を打ち直して再現する</li>
+        <li>ブランドの色に青・水色を使う</li>
+        <li>ロゴの上に文字や画像を重ねる</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== NAMING ===== -->
+<section id="naming"><div class="wrap">
+  <div class="sec-label">FILE NAMING</div>
+  <h2>ファイル名の読み方</h2>
+  <p class="lede">ファイル名は <code>buddis-【種類】-【配色】</code> の規則です。名前を見れば中身が分かります。</p>
+  <div class="grid2">
+    <div class="card">
+      <h4>【種類】</h4>
+      <table style="margin-top:0">
+        <tr><td><code>primary</code></td><td>欧文ロゴ単体</td></tr>
+        <tr><td><code>bilingual</code></td><td>バディス併記（上乗せ）</td></tr>
+        <tr><td><code>ruby / stack</code></td><td>読み仮名小 / 和文を下に</td></tr>
+        <tr><td><code>japanese</code></td><td>和文ロゴ</td></tr>
+        <tr><td><code>lockup / vertical</code></td><td>シンボル＋ロゴ</td></tr>
+        <tr><td><code>icon-app / favicon</code></td><td>アプリアイコン / タブ用</td></tr>
+        <tr><td><code>family-keihi…</code></td><td>製品ロゴ（経費 等）</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h4>【配色】</h4>
+      <table style="margin-top:0">
+        <tr><td><code>-color</code></td><td>フルカラー（明るい背景）</td></tr>
+        <tr><td><code>-reverse</code></td><td>濃い背景用の反転</td></tr>
+        <tr><td><code>-white</code></td><td>白1色（写真・濃地）</td></tr>
+        <tr><td><code>-black</code></td><td>黒1色（モノクロ印刷）</td></tr>
+      </table>
+      <p class="note" style="margin-top:12px">※ アイコンは末尾が地色名（<code>-cream/-brick/-ink</code>）、製品ロゴは製品名（<code>-keihi</code> 等）になります。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== DOWNLOAD ===== -->
+<section id="dl"><div class="wrap">
+  <div class="sec-label">DOWNLOAD</div>
+  <h2>ロゴデータのダウンロード</h2>
+  <p class="lede">全データ（46パターン × SVG/PNG/JPG）を <b>「ロゴ / ロゴ＋日本語 / アイコン＋ロゴ / Family」の4フォルダ</b>に整理した ZIP です。各フォルダ内は svg / png / jpg に分かれています。</p>
+  <div class="card" style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--dark);border:none">
+    <div style="flex:1;min-width:240px">
+      <img src="assets/delivery/buddis-bilingual-white.svg" width="120" alt="buddis" style="margin-bottom:10px">
+      <p style="font-size:13px;color:#E5D5C5;line-height:1.8">SVG = 元データ（拡大しても劣化なし・Web/印刷/Figma）<br>PNG = 背景透明 / JPG = 背景付き（Word・メール用）</p>
+    </div>
+    <a href="assets/delivery/buddis-logo-package.zip" download style="background:var(--brick);color:#fff;text-decoration:none;font-size:15px;font-weight:700;padding:16px 28px;border-radius:12px;white-space:nowrap">⬇ buddis-logo-package.zip</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>株式会社1137</b> — BUDDIS ロゴ・ガイドライン（2026年6月）</p>
+  <p>このガイドラインは社内（エンジニア・営業）での運用を想定しています。判断に迷う使い方があれば、1137までご相談ください。<br><a class="backlink" href="./">← 提案ボードに戻る</a></p>
+</div></footer>
+
+</body>
+</html>
