@@ -100,13 +100,14 @@
 <div class="hero"><div class="wrap">
   <div class="kicker">BRAND ASSET GUIDELINE</div>
   <h1>BUDDIS ロゴ・ガイドライン</h1>
-  <p>ロゴデータを「正しく・速く・迷わず」使うための実務ガイドです。エンジニアの実装と営業の資料づくり、どちらもこの1ページで完結します。</p>
-  <div class="who"><span>👩‍💻 エンジニア向け実装あり</span><span>📊 営業・資料づくり向け早見表あり</span><span>🎨 色の使い分けの考え方</span></div>
+  <p>ロゴ（デザイン）を画面・資料・印刷物に「正しく・迷わず」載せるための判断基準です。実装コードではなく<b style="color:#fff">「どのロゴを・どんな時に・どう扱うか」</b>に集中しています。</p>
+  <div class="who"><span>📄 Google Docs版（.docx）あり</span><span>📊 営業・資料づくりの早見表</span><span>🎨 色の使い分けの考え方</span></div>
+  <p style="margin-top:14px"><a class="backlink" href="assets/delivery/BUDDIS-ロゴ-デザイン活用ガイド.docx" download>⬇ Google ドキュメント版（.docx）をダウンロード</a></p>
   <div class="toc">
     <a href="#quick">迷ったらこれ</a>
     <a href="#scene">場面別 早見表</a>
     <a href="#color">色の使い分け</a>
-    <a href="#dev">実装ガイド</a>
+    <a href="#dev">エンジニアの判断</a>
     <a href="#space">余白・最小サイズ</a>
     <a href="#dodont">やってOK / NG</a>
     <a href="#naming">ファイル名の読み方</a>
@@ -201,40 +202,24 @@
 <!-- ===== DEV ===== -->
 <section id="dev"><div class="wrap">
   <div class="sec-label">FOR ENGINEERS</div>
-  <h2>実装ガイド（コピペ可）</h2>
-  <p class="lede">林さん・山田さん向け。そのまま貼って使えるスニペットです。<b>原則 SVG を使い、ラスタが要る所だけ PNG</b>。SVG は文字アウトライン化済みなのでフォント読み込み不要です。</p>
-
-  <h3>① カラートークン（CSS変数）</h3>
-  <pre><span class="c">/* ブランドカラーは必ず変数経由で使う（直書き禁止） */</span>
-<span class="k">:root</span> {
-  <span class="t">--buddis-brick</span>:     #B3492E; <span class="c">/* メインアクセント */</span>
-  <span class="t">--buddis-persimmon</span>: #E58A64; <span class="c">/* サブ・装飾 */</span>
-  <span class="t">--buddis-ink</span>:       #33241D; <span class="c">/* 文字 */</span>
-  <span class="t">--buddis-cream</span>:     #F6EFE3; <span class="c">/* 背景・アイコン地 */</span>
-}
-<span class="c">/* 例: CTAボタン */</span>
-.btn-primary { background: <span class="t">var(--buddis-brick)</span>; color:#fff; }</pre>
-
-  <h3>② ファビコン / アプリアイコン</h3>
-  <pre><span class="c">&lt;!-- &lt;head&gt; 内 --&gt;</span>
-<span class="k">&lt;link</span> rel=<span class="t">"icon"</span> type=<span class="t">"image/svg+xml"</span> href=<span class="t">"/buddis-favicon.svg"</span><span class="k">&gt;</span>
-<span class="k">&lt;link</span> rel=<span class="t">"icon"</span> type=<span class="t">"image/png"</span> sizes=<span class="t">"32x32"</span> href=<span class="t">"/buddis-favicon.png"</span><span class="k">&gt;</span>
-<span class="k">&lt;link</span> rel=<span class="t">"apple-touch-icon"</span> href=<span class="t">"/buddis-icon-app-cream.png"</span><span class="k">&gt;</span></pre>
-
-  <h3>③ ヘッダーロゴ（ダークモード自動切替）</h3>
-  <pre><span class="k">&lt;picture&gt;</span>
-  <span class="c">&lt;!-- ダークモードでは白版に差し替え --&gt;</span>
-  <span class="k">&lt;source</span> srcset=<span class="t">"/buddis-primary-white.svg"</span> media=<span class="t">"(prefers-color-scheme: dark)"</span><span class="k">&gt;</span>
-  <span class="k">&lt;img</span> src=<span class="t">"/buddis-primary-color.svg"</span> alt=<span class="t">"BUDDIS"</span> width=<span class="t">"132"</span> height=<span class="t">"34"</span><span class="k">&gt;</span>
-<span class="k">&lt;/picture&gt;</span></pre>
-
-  <h3>④ 拡大して使う場合（PNG・高解像度対応）</h3>
-  <pre><span class="c">&lt;!-- SVG が使えない箇所のみ。PNGは横2400px / アイコン1024px --&gt;</span>
-<span class="k">&lt;img</span> src=<span class="t">"/buddis-primary-color.png"</span> alt=<span class="t">"BUDDIS"</span>
-     width=<span class="t">"264"</span> style=<span class="t">"max-width:100%;height:auto"</span><span class="k">&gt;</span></pre>
-
-  <div class="card" style="margin-top:18px;background:var(--cream)">
-    <p class="note"><b>実装の原則</b> ／ ①色はハードコードせず CSS 変数で ／ ②ロゴ画像には必ず <code>alt="BUDDIS"</code> ／ ③ロゴを縦横別々に伸ばさない（<code>height:auto</code>） ／ ④暗い背景には <code>-white</code> 版 ／ ⑤ロゴの上に文字や別画像を重ねない</p>
+  <h2>エンジニアがデザインを使うときの判断</h2>
+  <p class="lede">細かい実装コードより、まず<b>この3つの「デザイン判断」を外さない</b>ことが大事です。これさえ守れば、ロゴが崩れたり浮いたりしません。</p>
+  <div class="grid3">
+    <div class="card">
+      <h4>① 背景に合う「版」を選ぶ</h4>
+      <p>明るい面では <code>-color</code>、暗い面・写真の上では <code>-white</code>。ロゴが背景に沈む／浮くのを防ぐ。ダークモードがあるなら明暗で版を切り替える。</p>
+    </div>
+    <div class="card">
+      <h4>② ロゴを変形・加工しない</h4>
+      <p>必ず提供データをそのまま使い、<b>縦横同率</b>で拡大縮小。自分で文字を組み直したり、色・影・角丸を足さない。</p>
+    </div>
+    <div class="card">
+      <h4>③ ブランドの色に青を足さない</h4>
+      <p>UIのアクセントはレンガ／杏。成功＝緑・エラー＝赤などの状態色は「機能」として最小限にとどめ、ブランドの主役にしない。</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px;background:var(--cream)">
+    <p class="note"><b>データの扱い方（共通）</b> ／ 原則 <b>SVG</b> を使う（拡大しても劣化せず、文字はアウトライン化済みでフォント不要）。ラスタが要る所だけ <b>PNG</b>（透過・高解像度）。Word・メールなど透過が使えない所は <b>JPG</b>。ロゴ画像には代替テキスト「BUDDIS」を付ける。<br>※ ファビコン設置やダークモード切替などの具体的なコード例が必要なら、1137で用意します（このガイドは「デザインの使い方」に集中しています）。</p>
   </div>
 </div></section>
 
